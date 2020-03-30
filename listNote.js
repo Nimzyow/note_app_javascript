@@ -7,8 +7,11 @@
       console.log(note);
     });
   };
-  ListNote.prototype.createAndStoreNote = function(text) {
-    let note = new MakeNote(text);
+  ListNote.prototype.createAndStoreNote = function(
+    text,
+    note = new MakeNote("")
+  ) {
+    note.text = text;
     this.list.push(note);
   };
   exports.ListNote = ListNote;
