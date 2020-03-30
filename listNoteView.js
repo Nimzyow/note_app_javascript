@@ -5,11 +5,15 @@
 
   ListNoteView.prototype.viewNote = function() {
     console.log(this.listNote);
-    let stringToPlace;
+    let stringToPlace = null;
 
     this.listNote.list.map(note => {
       console.log(note.text);
-      stringToPlace = `<li><div>${note.text}</div></li>`;
+      if (stringToPlace == null) {
+        stringToPlace = `<li><div>${note.text}</div></li>`;
+      } else {
+        stringToPlace += `<li><div>${note.text}</div></li>`;
+      }
     });
     let completeHTML = `<ul>${stringToPlace}</ul>`;
     return completeHTML;
