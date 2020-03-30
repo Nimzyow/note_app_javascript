@@ -4,3 +4,12 @@ function testCircleRadiusDefaultsTo10() {
 }
 
 testCircleRadiusDefaultsTo10();
+
+//random tests to test the functionality of assert.js
+assert.isSame(2, 2);
+let x = [1, 2, 3];
+assert.includes(x, 2);
+
+//the following will fail isSame and includes tests:
+// assert.isSame(2, 1);
+// assert.includes(x, 4);
