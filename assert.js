@@ -1,7 +1,9 @@
+let fail = "<p style='color: red; margin-top: 0px;'>failed</p>";
+
 let assert = {
   isTrue: assertionToCheck => {
     if (!assertionToCheck) {
-      document.write("<p style='color: red; margin-top: 0px;'>failed</p>");
+      document.write(fail);
       throw new Error(
         "Assertion failed: " + assertionToCheck + "is not truthy"
       );
@@ -11,7 +13,7 @@ let assert = {
   },
   isSame: (one, two) => {
     if (one !== two) {
-      document.write("<p style='color: red; margin-top: 0px;'>failed</p>");
+      document.write(fail);
       throw new Error("Yo! Those aren't the same things!!!");
     } else {
       document.write("<p style='color: green; margin-top: 0px;'>passed</p>");
@@ -27,7 +29,7 @@ let assert = {
   },
   isSameLength: (one, two) => {
     if (one.length !== two.length) {
-      document.write("<p style='color: red; margin-top: 0px;'>failed</p>");
+      document.write(fail);
       throw new Error("Come on now, you know those two aren't the same length");
     } else {
       document.write("<p style='color: green; margin-top: 0px;'>passed</p>");
