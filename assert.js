@@ -43,5 +43,15 @@ let assert = {
     } else {
       document.write(pass);
     }
+  },
+  isArray: arr => {
+    if (Array.isArray(arr)) {
+      document.write(pass);
+    } else {
+      document.write(fail);
+      throw new Error(
+        `Why do you think this is an Array? Failed, it's not an array`
+      );
+    }
   }
 };
