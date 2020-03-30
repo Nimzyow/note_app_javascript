@@ -3,9 +3,7 @@
     this.list = [];
   }
   ListNote.prototype.getList = function() {
-    this.list.map(note => {
-      console.log(note);
-    });
+    return this.list;
   };
   ListNote.prototype.createAndStoreNote = function(
     text,
