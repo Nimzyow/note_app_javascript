@@ -35,5 +35,13 @@ let assert = {
     } else {
       document.write(pass);
     }
+  },
+  isEmpty: arr => {
+    if (arr.length !== 0) {
+      document.write(fail);
+      throw new Error(`You thought that was empty? DEFINETELY NOT!`);
+    } else {
+      document.write(pass);
+    }
   }
 };
