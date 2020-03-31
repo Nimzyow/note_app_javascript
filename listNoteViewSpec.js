@@ -14,4 +14,14 @@ describe("listNoteView", () => {
         "<ul><li><div>this is a message</div></li><li><div>another message</div></li></ul>"
     );
   });
+  context(
+    "#reduceText limits notes of more than 20 characters to 20 characters only",
+    () => {
+      let message =
+        "look at this message as I go on and on and on and this is ridiculous how much further can i continue?";
+      assert.isTrue(
+        listNoteView.reduceText(message) === "look at this message..."
+      );
+    }
+  );
 });

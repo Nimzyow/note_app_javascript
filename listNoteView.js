@@ -18,5 +18,12 @@
     console.log(completeHTML);
     return completeHTML;
   };
+  ListNoteView.prototype.reduceText = function(message) {
+    if (message.length > 20) {
+      return `${message.slice(0, 20)}...`;
+    } else {
+      return message;
+    }
+  };
   exports.ListNoteView = ListNoteView;
 })(this);
