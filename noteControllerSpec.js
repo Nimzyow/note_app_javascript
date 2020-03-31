@@ -10,10 +10,10 @@ describe("noteController.js", () => {
   });
   context("app element contains correct HTML", () => {
     let app = document.getElementById("app");
+    let expectedString =
+      "<ul><li><div>hi there</div></li><li><div>bonjour</div></li></ul>";
     noteController.insertNote();
-    assert.isTrue(
-      app.innerHTML ===
-        "<ul><li><div>hi there</div></li><li><div>bonjour</div></li></ul>"
-    );
+    assert.isTrue(app.innerHTML === expectedString);
+    app.innerHTML = "";
   });
 });
