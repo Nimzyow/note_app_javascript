@@ -8,7 +8,6 @@
     let stringToPlace = null;
 
     this.listNote.list.map(note => {
-      console.log(note.text);
       if (stringToPlace == null) {
         stringToPlace = `<li><div>${note.text}</div></li>`;
       } else {

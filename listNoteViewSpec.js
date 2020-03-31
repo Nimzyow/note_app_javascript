@@ -7,7 +7,7 @@ describe("listNoteView", () => {
   listNote.createAndStoreNote("another message", double2);
   //create new ListNoteView and we will pass the
   let listNoteView = new ListNoteView(listNote);
-  describe("#viewNote returns list in html form", () => {
+  context("#viewNote returns list in html form", () => {
     console.log(listNoteView.viewNote());
     assert.isTrue(
       listNoteView.viewNote() ===

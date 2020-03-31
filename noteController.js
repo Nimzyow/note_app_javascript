@@ -1,6 +1,14 @@
-const div = document.getElementById("app");
-const btn = document.getElementById("btn");
+(function(exports) {
+  function NoteController(listNote = new ListNote()) {
+    this.listNote = listNote;
+    this.listNote.createAndStoreNote("Favourite drink: seltzer");
+    this.listNoteView = new ListNoteView(listNote);
+  }
 
-btn.addEventListener("click", function() {
-  div.innerHTML = "howdy";
-});
+  NoteController.prototype.insertNote = function() {
+    const noteDisplay = document.getElementById("app");
+    noteDisplay.innerHTML = this.listNoteView.viewNote();
+  };
+
+  exports.NoteController = NoteController;
+})(this);
