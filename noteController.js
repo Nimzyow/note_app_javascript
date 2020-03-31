@@ -1,14 +1,14 @@
 (function(exports) {
-  function NoteController(listNote = new ListNote()) {
-    this.listNote = listNote;
+  function NoteController(noteList = new NoteList()) {
+    this.noteList = noteList;
     //this.listNote.createAndStoreNote("Favourite drink: seltzer");
-    this.listNoteView = new ListNoteView(listNote);
+    this.noteListView = new NoteListView(noteList);
   }
 
   NoteController.prototype.insertNote = function() {
     console.log(this.listNote);
     let noteDisplay = document.getElementById("app");
-    noteDisplay.innerHTML = this.listNoteView.viewNote();
+    noteDisplay.innerHTML = this.noteListView.viewNote();
   };
 
   exports.NoteController = NoteController;

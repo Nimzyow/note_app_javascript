@@ -1,13 +1,13 @@
 (function(exports) {
-  function ListNoteView(listNote) {
-    this.listNote = listNote;
+  function NoteListView(noteList) {
+    this.noteList = noteList;
   }
 
-  ListNoteView.prototype.viewNote = function() {
-    console.log(this.listNote);
+  NoteListView.prototype.viewNote = function() {
+    console.log(this.noteList);
     let stringToPlace = null;
 
-    this.listNote.list.map(note => {
+    this.noteList.list.map(note => {
       let reducedText = this.reduceText(note.text);
       if (stringToPlace == null) {
         stringToPlace = `<li><div>${reducedText}</div></li>`;
@@ -20,12 +20,12 @@
     return completeHTML;
   };
 
-  ListNoteView.prototype.reduceText = function(message) {
+  NoteListView.prototype.reduceText = function(message) {
     if (message.length > 20) {
       return `${message.slice(0, 20)}...`;
     } else {
       return message;
     }
   };
-  exports.ListNoteView = ListNoteView;
+  exports.NoteListView = NoteListView;
 })(this);
