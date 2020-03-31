@@ -1,0 +1,23 @@
+{
+  "name": "note_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assert.js",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nimzyow/note_app_javascript.git"
+  },
+  "author": "Nima Soufiani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nimzyow/note_app_javascript/issues"
+  },
+  "homepage": "https://github.com/Nimzyow/note_app_javascript#readme"
+}
