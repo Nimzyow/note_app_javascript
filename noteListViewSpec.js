@@ -1,5 +1,5 @@
 describe("listNoteView", () => {
-  let listNote = new ListNote();
+  let listNote = new NoteList();
   let double = new Double("double", { text: "" });
   let double2 = new Double("double2", { text: "" });
 

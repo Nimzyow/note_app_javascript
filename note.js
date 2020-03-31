@@ -1,9 +1,9 @@
 (function(exports) {
-  function MakeNote(text) {
+  function Note(text) {
     this.text = text;
   }
-  MakeNote.prototype.getText = function() {
+  Note.prototype.getText = function() {
     return this.text;
   };
-  exports.MakeNote = MakeNote;
+  exports.Note = Note;
 })(this);
