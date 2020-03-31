@@ -15,6 +15,7 @@
       }
     });
     let completeHTML = `<ul>${stringToPlace}</ul>`;
+    console.log(completeHTML);
     return completeHTML;
   };
   exports.ListNoteView = ListNoteView;
