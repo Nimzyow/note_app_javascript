@@ -1,4 +1,4 @@
-let double = new Double("listNoteMock", {
+let double = new Double("noteListMock", {
   createAndStoreNote: "",
   list: [{ text: "hi there" }, { text: "bonjour" }]
 });
@@ -11,7 +11,7 @@ describe("noteController.js", () => {
   context("app element contains correct HTML", () => {
     let app = document.getElementById("app");
     let expectedString =
-      "<ul><li><div>hi there</div></li><li><div>bonjour</div></li></ul>";
+      '<ul><li><div id="0">hi there</div></li><li><div id="1">bonjour</div></li></ul>';
     noteController.insertNote();
     assert.isTrue(app.innerHTML === expectedString);
     app.innerHTML = "";

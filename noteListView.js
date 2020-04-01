@@ -1,6 +1,7 @@
 (function(exports) {
   function NoteListView(noteList) {
     this.noteList = noteList;
+    this.COUNT = 0;
   }
 
   NoteListView.prototype.viewNote = function() {
@@ -10,12 +11,14 @@
     this.noteList.list.map(note => {
       let reducedText = this.reduceText(note.text);
       if (stringToPlace == null) {
-        stringToPlace = `<li><div>${reducedText}</div></li>`;
+        stringToPlace = `<li><div id="${this.COUNT}">${reducedText}</div></li>`;
       } else {
-        stringToPlace += `<li><div>${reducedText}</div></li>`;
+        stringToPlace += `<li><div id="${this.COUNT}">${reducedText}</div></li>`;
       }
+      this.COUNT++;
     });
     let completeHTML = `<ul>${stringToPlace}</ul>`;
+
     console.log(completeHTML);
     return completeHTML;
   };
