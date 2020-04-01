@@ -1,7 +1,7 @@
 describe("noteListView", () => {
   let listNote = new NoteList();
-  let double = new Double("double", { text: "" });
-  let double2 = new Double("double2", { text: "" });
+  let double = new Double("double", { text: "", id: 1 });
+  let double2 = new Double("double2", { text: "", id: 2 });
 
   listNote.createAndStoreNote("this is a message", double);
   listNote.createAndStoreNote("another message", double2);
@@ -10,7 +10,7 @@ describe("noteListView", () => {
   context("#viewNote returns list in html form", () => {
     assert.isTrue(
       noteListView.viewNote() ===
-        '<ul><li><div id="0">this is a message</div></li><li><div id="1">another message</div></li></ul>'
+        '<ul><li><div id="0"><a href="#note0">this is a message</a></div></li><li><div id="1"><a href="#note1">another message</a></div></li></ul>'
     );
   });
   context(

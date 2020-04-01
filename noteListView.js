@@ -11,9 +11,11 @@
     this.noteList.list.map(note => {
       let reducedText = this.reduceText(note.text);
       if (stringToPlace == null) {
-        stringToPlace = `<li><div id="${this.COUNT}">${reducedText}</div></li>`;
+        //stringToPlace = `<li><a href="#${this.COUNT}">${reducedText}</a></li>`;
+        stringToPlace = `<li><div id="${this.COUNT}"><a href="#note${this.COUNT}">${reducedText}</a></div></li>`;
       } else {
-        stringToPlace += `<li><div id="${this.COUNT}">${reducedText}</div></li>`;
+        //stringToPlace += `<li><a href="#${this.COUNT}">${reducedText}</a></li>`;
+        stringToPlace += `<li><div id="${this.COUNT}"><a href="#note${this.COUNT}">${reducedText}</a></div></li>`;
       }
       this.COUNT++;
     });

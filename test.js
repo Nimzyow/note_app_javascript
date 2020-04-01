@@ -1,14 +1,17 @@
-makeTigerLinkClickSayTiger();
+makeUrlChangeShowAnimalForCurrentPage();
 
-function makeTigerLinkClickSayTiger() {
-  document
-    .getElementById("tiger-link")
-    .addEventListener("click", function(clickEvent) {
-      clickEvent.preventDefault();
-      sayTiger();
-    });
+function makeUrlChangeShowAnimalForCurrentPage() {
+  window.addEventListener("hashchange", showAnimalForCurrentPage);
 }
 
-function sayTiger() {
-  document.getElementById("animal").innerHTML = "tiger";
+function showAnimalForCurrentPage() {
+  showAnimal(getAnimalFromUrl(window.location));
+}
+
+function getAnimalFromUrl(location) {
+  return location.hash.split("#")[1];
+}
+
+function showAnimal(animal) {
+  document.getElementById("animal").innerHTML = animal;
 }
