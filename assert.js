@@ -60,7 +60,7 @@ let assert = {
     } else {
       document.write(fail);
       throw new Error(
-        `Why do you think this is an Array? Failed, it's not an array`
+        `Why do you think this is an instance LOL? Failed, it's not an instance you bugger`
       );
     }
   }

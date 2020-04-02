@@ -2,12 +2,20 @@
   function NoteController(noteList = new NoteList()) {
     this.noteList = noteList;
     this.noteListView = new NoteListView(noteList);
+    this.listenForSubmit();
   }
 
   NoteController.prototype.insertNote = function() {
     let noteDisplay = document.getElementById("app");
     noteDisplay.innerHTML = this.noteListView.viewNote();
     this.singleNoteView();
+  };
+
+  NoteController.prototype.listenForSubmit = function() {
+    document.getElementById("text").addEventListener("click", function(e) {
+      console.log(e);
+      e.preventDefault();
+    });
   };
 
   NoteController.prototype.singleNoteView = function() {
@@ -29,10 +37,10 @@
       this.showNote(this.getNoteFromUrl(window.location));
     });
   };
-
   exports.NoteController = NoteController;
 })(this);
 
+//phases for note creation from browser.
 let noteList = new NoteList();
 noteList.createAndStoreNote("cor, im loving the quality of this note");
 noteList.createAndStoreNote("brilliant note taking");
