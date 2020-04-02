@@ -20,7 +20,7 @@
       this.COUNT++;
     });
     let completeHTML = `<ul>${stringToPlace}</ul>`;
-
+    this.COUNT = 0;
     console.log(completeHTML);
     return completeHTML;
   };

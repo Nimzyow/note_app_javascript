@@ -13,9 +13,9 @@
 
   NoteController.prototype.listenForSubmit = function() {
     document.getElementById("text").addEventListener("submit", function(e) {
-      console.log(e);
-      console.log(e.target[0].value);
       e.preventDefault();
+      noteController.noteList.createAndStoreNote(e.target[0].value);
+      noteController.insertNote();
     });
   };
 
@@ -42,8 +42,8 @@
 })(this);
 
 //phases for note creation from browser.
-let noteList = new NoteList();
-noteList.createAndStoreNote("cor, im loving the quality of this note");
-noteList.createAndStoreNote("brilliant note taking");
-let ntController = new NoteController(noteList);
-ntController.insertNote();
+// let noteList = new NoteList();
+// noteList.createAndStoreNote("cor, im loving the quality of this note");
+//noteList.createAndStoreNote("brilliant note taking");
+let noteController = new NoteController();
+//ntController.insertNote();
