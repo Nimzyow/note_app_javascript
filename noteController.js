@@ -14,7 +14,6 @@
     let noteControllerObject = this;
     window.addEventListener("hashchange", function() {
       this.getNoteFromUrl = function(location) {
-        console.log(location.hash.split("#")[1]);
         return location.hash.split("#note")[1];
       };
 
