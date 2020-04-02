@@ -12,8 +12,9 @@
   };
 
   NoteController.prototype.listenForSubmit = function() {
-    document.getElementById("text").addEventListener("click", function(e) {
+    document.getElementById("text").addEventListener("submit", function(e) {
       console.log(e);
+      console.log(e.target[0].value);
       e.preventDefault();
     });
   };
