@@ -26,10 +26,15 @@ NoteListViewMock.prototype.viewNote = function() {
   return "";
 };
 
-let noteListViewMock = new NoteListViewMock(noteListMock);
-console.log(noteListViewMock);
-let nC = new NoteController(noteListMock, noteListViewMock);
 describe("noteController.js", () => {
+  context("note list is empty on initalisation", () => {
+    display = document.getElementById("main").innerHTML;
+    assert.isSame(display, "");
+  });
+
+  let noteListViewMock = new NoteListViewMock(noteListMock);
+  console.log(noteListViewMock);
+  let nC = new NoteController(noteListMock, noteListViewMock);
   context("can be instantiated", () => {
     assert.isInstanceOf(nC, NoteController);
   });
