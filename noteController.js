@@ -1,12 +1,16 @@
 (function(exports) {
-  function NoteController(noteList = new NoteList()) {
-    this.noteList = noteList;
-    this.noteListView = new NoteListView(noteList);
+  function NoteController(
+    noteList = new NoteList(),
+    noteListView = new NoteListView(noteList)
+  ) {
+    this.noteListView = noteListView;
+    console.log(this.noteListView);
     this.listenForSubmit();
   }
 
   NoteController.prototype.insertNote = function() {
     let noteDisplay = document.getElementById("app");
+    console.log(this.noteListView.viewNote());
     noteDisplay.innerHTML = this.noteListView.viewNote();
     this.singleNoteView();
   };
@@ -14,12 +18,15 @@
   NoteController.prototype.listenForSubmit = function() {
     document.getElementById("text").addEventListener("submit", function(e) {
       e.preventDefault();
-      noteController.noteList.createAndStoreNote(e.target[0].value);
+      noteController.noteListView.noteList.createAndStoreNote(
+        e.target[0].value
+      );
       noteController.insertNote();
     });
   };
 
   NoteController.prototype.singleNoteView = function() {
+    console.log("clicked");
     let noteControllerObject = this;
     window.addEventListener("hashchange", function() {
       this.getNoteFromUrl = function(location) {
@@ -27,7 +34,7 @@
       };
 
       this.showNote = function(id) {
-        noteControllerObject.noteList.list.map(note => {
+        noteControllerObject.noteListView.noteList.list.map(note => {
           if (note.id === Number(id)) {
             let snv = new SingleNoteView(note);
             let noteDisplay = document.getElementById("main");
