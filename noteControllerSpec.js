@@ -4,25 +4,25 @@ let noteListMock = new Double("noteListMock", {
     {
       text: "hi there this is a test that goes on and one",
       id: 0,
-      getText: function() {
+      getText: function () {
         return "hi there this is a test that goes on and one";
-      }
+      },
     },
     {
       text: "bonjour",
       id: 1,
-      getText: function() {
+      getText: function () {
         return "bonjour";
-      }
-    }
-  ]
+      },
+    },
+  ],
 });
 
 function NoteListViewMock(noteList) {
   this.noteList = noteList;
 }
 
-NoteListViewMock.prototype.viewNote = function() {
+NoteListViewMock.prototype.viewNote = function () {
   return "";
 };
 
@@ -42,7 +42,7 @@ describe("noteController.js", () => {
     let app = document.getElementById("app");
     let expectedString =
       '<ul><li><div id="0"><a href="#note0">hi there this is a t...</a></div></li><li><div id="1"><a href="#note1">bonjour</a></div></li></ul>';
-    nC.noteListView.viewNote = function() {
+    nC.noteListView.viewNote = function () {
       return expectedString;
     };
     nC.insertNote();
