@@ -52,6 +52,7 @@ describe("noteController.js", () => {
     document.getElementById("1").click();
     let hash = window.location.hash;
     assert.isSame(hash, "#note1");
+    console.log(document.getElementById("main"));
   });
   // Bottom test experimenting with DOM manipulation
   // context(
@@ -72,8 +73,8 @@ describe("noteController.js", () => {
   //     //document.getElementById("main").innerHTML = "";
   //   }
   // );
-  let app = document.getElementById("app");
-  app.innerHTML = "";
-  document.getElementById("main").innerHTML = "";
-  document.getElementById("text").innerHTML = "";
+  // let app = document.getElementById("app");
+  // app.innerHTML = "";
+  // document.getElementById("main").innerHTML = "";
+  // document.getElementById("text").innerHTML = "";
 });
